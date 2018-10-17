@@ -26,9 +26,8 @@ import {
     Sha256Notary
 } from 'torchwood';
 
-import util = require('util');
 import config = require('config');
-import { EthereumBlockTracker } from '/torchwood/Ethereum/Ethereum';
+import { EthereumBlockTracker } from 'torchwood/Ethereum/Ethereum';
 
 class Program {
     public static async Run() {
