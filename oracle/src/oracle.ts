@@ -1,17 +1,17 @@
 import winston = require('winston');
 
-winston.remove(winston.transports.Console);
-   winston.add(winston.transports.Console, {
-     level: 'debug',
-     prettyPrint: true,
-     colorize: true,
-     silent: false,
-     timestamp: false
-   });
+// winston.remove(winston.transports.Console);
+//    winston.add(winston.transports.Console, {
+//      level: 'debug',
+//      prettyPrint: true,
+//      colorize: true,
+//      silent: false,
+//      timestamp: false
+//    });
 
 
 import {
-    // LoggingConfiguration,
+    LoggingConfiguration,
     AzureBlobStorage,
     FileSystemStorage,
     ServiceBusConfig,
@@ -35,7 +35,7 @@ class Program {
     }
 
     public static async WatchChain(rpcUrl: string, startingBlock: string) {
-        // LoggingConfiguration.initialize(null);
+        LoggingConfiguration.initialize(null);
 
         const storageConfig = config.get('storage');
         const web3Client = new Ethereum.Web3.EthereumWeb3Adapter(rpcUrl);
@@ -46,9 +46,9 @@ class Program {
         const fsCache = new Ethereum.Web3.EthereumWeb3AdapterStorageCache(web3Client, chainStorage);
         const ethClient = new Ethereum.EthereumReader(fsCache, chainStorage);
 
-        // const contractFactory = new ContractFactory(web3Client, contractStorage, new Sha256Notary());
-        // await contractFactory.UploadAndVerify(await contractStorage.ReadItem('Flag.sol'));
-
+        const contractFactory = new ContractFactory(web3Client, chainStorage, new Sha256Notary());
+        await contractFactory.UploadAndVerify(await contractStorage.ReadItem('Flag.sol'));
+        
         if (startingBlock.length === 0) {
             startingBlock = 'latest';
         }
