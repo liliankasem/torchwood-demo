@@ -42,13 +42,12 @@ class Program {
         const networkId = await Ethereum.EthereumReader.GetIdentity(web3Client);
         const eventBus = Program.GetEventBus(new ServiceBusConfig(config.get('serviceBus')));
         const chainStorage = Program.GetChainStorage(storageConfig, networkId);
-        //const contractStorage = Program.GetContractStorage(storageConfig);
+        const contractStorage = Program.GetContractStorage(storageConfig);
         const fsCache = new Ethereum.Web3.EthereumWeb3AdapterStorageCache(web3Client, chainStorage);
         const ethClient = new Ethereum.EthereumReader(fsCache, chainStorage);
 
-        // const contractFactory = new ContractFactory(web3Client, chainStorage, new Sha256Notary());
-        // let x = await contractFactory.UploadAndVerify(await chainStorage.ReadItem('Flag.sol'));
-
+        // const contractFactory = new ContractFactory(web3Client, contractStorage, new Sha256Notary());
+        // await contractFactory.UploadAndVerify(await contractStorage.ReadItem('Flag.sol'));
 
         if (startingBlock.length === 0) {
             startingBlock = 'latest';
