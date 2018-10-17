@@ -1,0 +1,31 @@
+{
+    "logging": {
+        "ai": ""
+    },
+    "storage": {
+        "implementation": "FileSystem",
+        "root": "./demo",
+        "azure": {
+            "account": "",
+            "key": ""
+        }
+    },
+    "serviceBus": {
+        "namespace": "chaindata",
+        "keyName": "Send",
+        "topic": "Test",
+        "key": ""
+    },
+    "rpcUrl": "http://127.0.0.1:8545",
+    "startingBlock" : "0",
+    "setup" : {
+        "account": "0x4d5e1dc97d08c9ccb8fdf60fff64dd4a7aca00b4",
+        "secret" : "Blockchain",
+        "contract": {
+            "file": "Flag.sol",
+            "name": "Flag",
+            "parameters": {
+            }
+        }
+    }
+}
