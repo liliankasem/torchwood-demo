@@ -19,10 +19,10 @@
     "rpcUrl": "http://127.0.0.1:8545",
     "startingBlock" : "0",
     "setup" : {
-        "account": "0x4d5e1dc97d08c9ccb8fdf60fff64dd4a7aca00b4",
-        "secret" : "Blockchain",
+        "account": "0x30ab3d9f876005ed7f351b7cd7330b90136deb92",
+        "secret" : "helloworld",
         "contract": {
-            "file": "Flag.sol",
+            "file": "Contracts/Flag.sol",
             "name": "Flag",
             "parameters": {
             }

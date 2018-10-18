@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "build": "tsc",
+    "contracts": "node release/contractSetup.js",
     "oracle": "node release/oracle.js"
   },
   "license": "MIT",
   "dependencies": {
     "config": "^1.27.0",
-    "torchwood": "^0.20181017.3",
+    "torchwood": "^0.20181018.2",
     "winston": "^2.4.0"
   },
   "devDependencies": {
