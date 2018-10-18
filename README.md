@@ -16,6 +16,19 @@ I run this command as that is the account I have using to deploy contracts onto 
 5. `npm run contracts` - this will deploy the Flag.sol contract on to the chain
 6. `npm run oracle` - this will run the oracle listening to that chain
 
+``` LOG
+warn: log level set to info
+debug: Compiling 14274a7e818b648d0c55db85e7a71445c48cdbc48925899c669e031ae7364215
+debug: Persisting contract Flag
+info: Local File System './demo/1539902348733-71810cb896'
+info: Console Event Bus
+debug: Reading Block 0
+info: {"_block":1,"_address":"0x30ab3d9f876005ed7f351b7cd7330b90136deb92","_balance":"1000000000000000000000"}
+info: {"_state":"0","_block":1,"_address":"0xd852549950bef777271ba7123f62224e5adcc58f","_balance":"0"}
+info: {"_block":2,"_address":"0x30ab3d9f876005ed7f351b7cd7330b90136deb92","_balance":"1000000000000000000000"}
+info: {"_state":"1","_block":2,"_address":"0x88f9b9b08479d160dc5a70991038b7cc29a4cf94","_balance":"0"}
+```
+
 If you don't see any details about specific changes of a contract, it's probably because the hashes of the contracts are different (i.e. truffle's solc compiler is different to the solc version that Torchwood uses). In that case:
 
 1. Stop the oracle
