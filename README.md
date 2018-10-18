@@ -59,7 +59,7 @@ In your storage location, you need a 'keystore' folder containing the keystore f
 
 You need to update the `config.default.json` file accordingly:
 
-``` json
+``` javascript
     "setup" : {
         "account": "0x30ab3d9f876005ed7f351b7cd7330b90136deb92", //account you want to use to make transactions
         "secret" : "helloworld", //secret of that account
