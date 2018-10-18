@@ -62,3 +62,10 @@ typings/
 
 # Oracle release
 oracle/release/
+
+# Ignore everything in demo except Contracts
+oracle/demo
+!/oracle/demo/Contracts/*
+
+# Truffle build
+build/
