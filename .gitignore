@@ -62,8 +62,3 @@ typings/
 
 # Oracle release
 release/
-
-# Ignore everything in demo except Contracts and keystore for demo purposes
-demo/
-!/demo/Contracts/*
-!/demo/keystore/*

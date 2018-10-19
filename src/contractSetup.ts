@@ -47,7 +47,6 @@ class Program {
         const rawContract = (await this.storage.ReadItem(demoConfig.contract.file));
         const constructor = null;
         await this.MakeContractTx(rawContract, demoConfig.contract.name, demoConfig.contract.parameters, demoConfig.account, signer, constructor);
-        await this.MakeContractTx(rawContract, demoConfig.contract.name, demoConfig.contract.parameters, demoConfig.account, signer, "close");
     }
 
     public async MakeContractTx(rawContract: string, contractName: string, contractParams: any, account: string, signer: ISigningNotary, method: any) {
