@@ -2,7 +2,7 @@
 
 Before running these projects, have a chain instance running (e.g. `ganache-cli`)
 
-I run this command as that is the account I have using to deploy contracts onto the chain using torchwood:
+I run this command as there is a specific account I use in this demo to deploy contracts (using torchwood):
 
 `ganache-cli --account="0xccd014cf522775cad265a110befeb383afc43dec1d7d66ccf1696e5b96c1c5c7,1000000000000000000000000000000000000000"`
 
@@ -72,4 +72,25 @@ You need to update the `config.default.json` file accordingly:
             }
         }
     }
+```
+
+### Truffle
+You can also use this sample truffle project to deploy contracts onto the chain:
+
+https://github.com/liliankasem/truffle
+
+#### Getting Torchwood to read contracts not compiled with Torchwood
+Torchwood uses the default solcjs settings when compiling, this is equivalent of running solc --optimize which should compile and optimize the contract for 200 runs. If you compiled and deployed the contract using Truffle or another testing framework, make sure that it is compiling the contracts with the optimizer enabled.
+
+#### Enabling optimizer for Truffle
+By default Truffle does not have the optimizer enabled when compiled contracts. To enable the optimizer you must open your truffle.js or truffle-config.js file and adjust your module.exports object to look like the following:
+
+```
+module.exports = {
+  solc: { 
+    optimizer: { 
+      enabled: true, // Enable solc optimizer
+    },
+  }
+};
 ```

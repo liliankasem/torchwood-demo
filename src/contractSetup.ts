@@ -43,16 +43,15 @@ class Program {
     public async Run() {
         const demoConfig = config.get('setup');
         const signer = new SigningNotary(this.storage, demoConfig.secret);
-
         const rawContract = (await this.storage.ReadItem(demoConfig.contract.file));
-        const constructor = null;
-        await this.MakeContractTx(rawContract, demoConfig.contract.name, demoConfig.contract.parameters, demoConfig.account, signer, constructor);
+        await this.DeployContract(rawContract, demoConfig.contract.name, demoConfig.contract.parameters, demoConfig.account, signer);
     }
 
-    public async MakeContractTx(rawContract: string, contractName: string, contractParams: any, account: string, signer: ISigningNotary, method: any) {
+    public async DeployContract(rawContract: string, contractName: string, contractParams: any, account: string, signer: ISigningNotary) {
         const fromAddress = new EthereumAddress(account);
         const id = await this.factory.UploadAndVerify(rawContract);
-        const prepared = await this.factory.PrepareTransaction(fromAddress, id, contractName, method, contractParams);
+        const constructor = null;
+        const prepared = await this.factory.PrepareTransaction(fromAddress, id, contractName, constructor, contractParams);
         const signed = await signer.Sign(prepared);
         winston.debug('Submitting transaction');
         const receipt = await this.web3.SendSignedTx(signed);
