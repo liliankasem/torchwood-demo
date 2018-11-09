@@ -9,7 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "config": "^1.27.0",
-    "torchwood": "^0.20181018.2",
+    "torchwood": "^0.20181109.1-preview",
     "winston": "^2.4.0"
   },
   "devDependencies": {
