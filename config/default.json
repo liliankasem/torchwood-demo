@@ -5,25 +5,28 @@
     "storage": {
         "implementation": "FileSystem",
         "root": "./demo",
+        "contracts": {
+            "implementation": "Folder",
+            "root": "contracts"
+        },
         "azure": {
             "account": "",
             "key": ""
         }
     },
-    "serviceBus": {
-        "namespace": "chaindata",
+    "eventbus": {
+        "namespace": "oracle",
         "keyName": "Send",
-        "topic": "Test",
+        "topic": "test",
         "key": ""
     },
-    "rpcUrl": "http://127.0.0.1:8545",
+    "rpcUrl": "http://127.0.0.1:7545",
     "startingBlock" : "0",
     "setup" : {
-        "account": "0x30ab3d9f876005ed7f351b7cd7330b90136deb92",
-        "secret" : "helloworld",
+        "account": "0x1e4ae486400A29Fc8869943Da23B8DDD7E45639d",
+        "secret" : "enable bamboo sun assume initial garlic width oak plunge piano palace awkward",
         "contract": {
-            "file": "Contracts/Flag.sol",
-            "name": "Flag",
+            "name": "DownloadEventDemo",
             "parameters": {
             }
         }

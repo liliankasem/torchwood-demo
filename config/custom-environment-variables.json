@@ -1,0 +1,24 @@
+{
+    "logging": {
+        "ai": "APP_INSIGHTS_CONN"
+    },
+    "storage": {
+        "implementation": "STORAGE_IMPLEMENTATION",
+        "root": "STORAGE_ROOT",
+        "contracts": {
+            "implementation": "STORAGE_CONTRACTS_IMPLEMENTATION",
+            "root": "STORAGE_CONTRACTS_ROOT"
+        },
+        "azure": {
+            "account": "STORAGE_AZURE_ACCOUNT",
+            "key": "STORAGE_AZURE_KEY"
+        }
+    },
+    "eventbus": {
+        "namespace": "EVENTHUB_NAMESPACE",
+        "keyName": "EVENTHUB_KEY_NAME",
+        "topic": "EVENTHUB_TOPIC",
+        "key": "EVENTHUB_KEY"
+    },
+    "rpcUrl": "RPC_URL"
+}

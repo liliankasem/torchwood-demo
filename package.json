@@ -1,18 +1,24 @@
 {
-  "name": "torchwood-demo",
-  "version": "1.0.0",
+  "name": "oracle",
+  "version": "0.0.1",
   "scripts": {
     "build": "tsc",
-    "contracts": "node release/contractSetup.js",
-    "oracle": "node release/oracle.js"
+    "config": "mkdir release/config/ && cp -r config/ release/config/",
+    "package": "npm run build && cp package.json release/ && cp docker/Dockerfile release/ && npm run config",
+    "oracle": "node src/run.js",
+    "local": "node release/src/run.js",
+    "test": "mocha --recursive release/**/*Test*.js"
   },
   "license": "MIT",
   "dependencies": {
     "config": "^1.27.0",
-    "torchwood": "^0.20181109.1-preview",
+    "torchwood": "^0.2018.5099-preview",
     "winston": "^2.4.0"
   },
   "devDependencies": {
-    "typescript": "^2.1.4"
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "typescript": "^2.1.4",
+    "ts-node": "^7.0.1"
   }
 }
